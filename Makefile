@@ -1,5 +1,5 @@
 deploy:
-	$(call upload_data,reach-ui,reach-dev.skunkworksngwsa.de)
+	$(call upload_data,core-admin-ui)
 
 .PHONY: deploy
 

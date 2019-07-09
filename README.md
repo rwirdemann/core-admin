@@ -1,4 +1,4 @@
-# REACH Web UI
+# CoRE Admin Panel
 
 ## Build Setup
 
