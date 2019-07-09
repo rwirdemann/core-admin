@@ -1,26 +1,28 @@
 import Vue from 'vue'
 
 Vue.component('stage', {
-  props: ['stage', "baseURL"],
+  props: ['stage', "coredsBaseURL"],
   template: `
     <div>
       <h4>{{stage}}</h4>
-      CoRE-DS Version: <span>{{coredsVersion}}</span>
+      <p>CoRE-DS: <span>{{coredsVersion}}</span></p>
+      <p>CoRE: <span>{{coreVersion}}</span></p>
     </div>
   `,
   data() {
     return {
-      coredsVersion: "",
+      coredsVersion: "N/A",
+      coreVersion: "N/A",
     }
   },
   created() {
-    fetch('https://' + this.baseURL + '/about')
+    fetch('https://' + this.coredsBaseURL + '/about')
       .then(response => response.json())
       .then(json => {
         this.coredsVersion = json["CoRE-DS Version"]
+        this.coreVersion = json["CoRE Version"]
       })
       .catch((err) => {
-        this.coredsVersion = "N/A"
         console.error(err)
       })
   },

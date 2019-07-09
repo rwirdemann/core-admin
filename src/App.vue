@@ -3,13 +3,13 @@
     <h1>{{ msg }}</h1>
     <div class="row">
       <div class="col">
-        <stage stage="Development" baseURL="core-ds-dev.phantomworksngwcore.de"></stage>
+        <stage stage="Development" coredsBaseURL="core-ds-dev.phantomworksngwcore.de"></stage>
       </div>
       <div class="col">
-        <stage stage="QA" baseURL="core-ds-qa.phantomworksngwcore.de"></stage>
+        <stage stage="QA" coredsBaseURL="core-ds-qa.phantomworksngwcore.de"></stage>
       </div>
       <div class="col">
-        <stage stage="Integration" baseURL="core-ds-int.phantomworksngwcore.de"></stage>
+        <stage stage="Integration" coredsBaseURL="core-ds-int.phantomworksngwcore.de"></stage>
       </div>
     </div>
   </div>
