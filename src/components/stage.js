@@ -1,24 +1,28 @@
 import Vue from 'vue'
 
 Vue.component('stage', {
+  props: ['stage', "baseURL"],
   template: `
-    <div><q
+    <div>
+      <h4>{{stage}}</h4>
       CoRE-DS Version: <span>{{coredsVersion}}</span>
     </div>
   `,
   data() {
     return {
-      baseUrl: "core-ds-dev.phantomworksngwcore.de",
       coredsVersion: "",
     }
   },
   created() {
-    fetch('https://' + this.baseUrl + '/about')
+    fetch('https://' + this.baseURL + '/about')
       .then(response => response.json())
       .then(json => {
         this.coredsVersion = json["CoRE-DS Version"]
       })
-      .catch((err) => console.error(err))
+      .catch((err) => {
+        this.coredsVersion = "N/A"
+        console.error(err)
+      })
   },
   methods: {
     loadModels: function () {

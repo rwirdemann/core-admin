@@ -1,15 +1,15 @@
 <template>
-  <div id="app">
+  <div class="container-fluid" id="app">
     <h1>{{ msg }}</h1>
     <div class="row">
-      <div class="col-sm">
-        <stage></stage>
+      <div class="col">
+        <stage stage="Development" baseURL="core-ds-dev.phantomworksngwcore.de"></stage>
       </div>
-      <div class="col-sm">
-        <stage></stage>
+      <div class="col">
+        <stage stage="QA" baseURL="core-ds-qa.phantomworksngwcore.de"></stage>
       </div>
-      <div class="col-sm">
-        <stage></stage>
+      <div class="col">
+        <stage stage="Integration" baseURL="core-ds-int.phantomworksngwcore.de"></stage>
       </div>
     </div>
   </div>
@@ -22,7 +22,7 @@ export default {
   name: "app",
   data() {
     return {
-      msg: "CoRE Admin Panel"
+      msg: "The CoRE Admin Panel"
     };
   }
 };
