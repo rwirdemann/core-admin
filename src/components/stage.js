@@ -16,20 +16,17 @@ Vue.component('stage', {
     }
   },
   created() {
-    fetch('https://' + this.coredsBaseURL + '/about')
-      .then(response => response.json())
-      .then(json => {
-        this.coredsVersion = json["CoRE-DS Version"]
-        this.coreVersion = json["CoRE Version"]
-      })
-      .catch((err) => {
-        console.error(err)
-      })
+    getVersion(this.coredsBaseURL).then(json => {
+      this.coredsVersion = json["CoRE-DS Version"]
+      this.coreVersion = json["CoRE Version"]
+    })
   },
   methods: {
-    loadModels: function () {
-      this.models = this.vinMap[this.selected.trim()]
-      this.substances = []
-    },
   }
 })
+
+async function getVersion(url) {
+  let response = await fetch('https://' + url + '/about')
+  let data = await response.json()
+  return data
+}
