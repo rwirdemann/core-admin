@@ -1,25 +1,27 @@
 <template>
-  <div class="container-fluid" id="app">
-    <h1>{{ msg }}</h1>
+  <div id="app">
     <div class="row">
-      <div class="col">
-        <stage stage="Development" coredsBaseURL="core-ds-dev.phantomworksngwcore.de"></stage>
+      <div class="col-4">
+        <Stage stage="Development" coredsBaseURL="core-ds-dev.phantomworksngwcore.de"></Stage>
       </div>
-      <div class="col">
-        <stage stage="QA" coredsBaseURL="core-ds-qa.phantomworksngwcore.de"></stage>
+      <div class="col-4">
+        <Stage stage="QA" coredsBaseURL="core-ds-qa.phantomworksngwcore.de"></Stage>
       </div>
-      <div class="col">
-        <stage stage="Integration" coredsBaseURL="core-ds-int.phantomworksngwcore.de"></stage>
+      <div class="col-4">
+        <Stage stage="Integration" coredsBaseURL="core-ds-int.phantomworksngwcore.de"></Stage>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import reach from './components/stage'
+import Stage from "./components/Stage.vue";
 
 export default {
   name: "app",
+  components: {
+    Stage,
+  },
   data() {
     return {
       msg: "The CoRE Admin Panel"
